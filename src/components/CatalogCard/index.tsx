@@ -1,5 +1,5 @@
 import "./styles.css";
-import computerImg from '../../assets/computer.png'
+import computerImg from "../../assets/computer.png";
 
 export default function CatalogCard() {
   return (

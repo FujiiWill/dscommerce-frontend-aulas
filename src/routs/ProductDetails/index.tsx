@@ -9,7 +9,8 @@ const product: ProductDTO = {
   id: 2,
   name: "smart TV",
   description: "Esta TV é muito bonita",
-  imgUrl: "https://raw.githubusercontent.com/devsuperior/dscatalog-resources/9b5846b1157b296c3012f16c817f70ad1929fa6f/backend/img/2-big.jpg",
+  imgUrl:
+    "https://raw.githubusercontent.com/devsuperior/dscatalog-resources/9b5846b1157b296c3012f16c817f70ad1929fa6f/backend/img/2-big.jpg",
   price: 2500.99,
   categories: [
     {
@@ -22,8 +23,8 @@ const product: ProductDTO = {
     },
     {
       id: 4,
-      name: "Importados"
-    }
+      name: "Importados",
+    },
   ],
 };
 
@@ -33,7 +34,7 @@ export default function Productdetails() {
       <HeaderClient />
       <main>
         <section id="product-details-section" className="dsc-container">
-          <ProductDetailsCard product={product}/>
+          <ProductDetailsCard product={product} />
           <div className="dsc-btn-page-container">
             <ButtonPrimary />
             <ButtonInverse />

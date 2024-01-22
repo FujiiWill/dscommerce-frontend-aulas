@@ -1,9 +1,7 @@
-import Productdetails from './routs/ProductDetails';
+import Productdetails from "./routs/ProductDetails";
 
 function App() {
-  return(
-    <Productdetails />
-  );
+  return <Productdetails />;
 }
 
-export default App
+export default App;
