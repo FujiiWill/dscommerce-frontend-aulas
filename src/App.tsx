@@ -1,7 +1,7 @@
-import Productdetails from "./routs/ProductDetails";
+import Catalog from "./routs/Catalog";
 
 function App() {
-  return <Productdetails />;
+  return <Catalog />;
 }
 
 export default App;
