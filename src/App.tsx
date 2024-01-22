@@ -1,8 +1,8 @@
-import Catalog from './routs/Catalog';
+import Productdetails from './routs/ProductDetails';
 
 function App() {
   return(
-    <Catalog />
+    <Productdetails />
   );
 }
 
