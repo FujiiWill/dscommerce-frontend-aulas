@@ -6,6 +6,7 @@ import * as productService from "../../../services/product-service";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ProductDTO } from "../../../models/product";
+import * as cartService from "../../../services/cart-service";
 
 export default function Productdetails() {
   const params = useParams();
@@ -17,7 +18,7 @@ export default function Productdetails() {
   useEffect(() => {
     productService
       .findById(Number(params.productId))
-      .then(response => {
+      .then((response) => {
         setProduct(response.data);
       })
       .catch(() => {
@@ -25,15 +26,21 @@ export default function Productdetails() {
       });
   }, []);
 
+  function handleByClick() {
+    if (product) {
+      cartService.addProduct(product);
+      navigate("/cart");
+    }
+  }
+
   return (
     <main>
       <section id="product-details-section" className="dsc-container">
-        {
-          product &&
-          <ProductDetailsCard product={product} />         
-        }
+        {product && <ProductDetailsCard product={product} />}
         <div className="dsc-btn-page-container">
-          <ButtonPrimary name="Comprar" />
+          <div onClick={handleByClick}>
+            <ButtonPrimary name="Comprar" />
+          </div>
           <Link to="/">
             <ButtonInverse name="Início" />
           </Link>
