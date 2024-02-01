@@ -13,8 +13,8 @@ import { history } from "./utils/history";
 import { PrivateRoute } from "./components/PrivateRoute";
 import { AccessTokenPayloadDTO } from "./models/auth";
 import { ContextToken } from "./utils/context-token";
-import * as authService from "./services/auth-service"
-import * as cartService from "./services/cart-service"
+import * as authService from "./services/auth-service";
+import * as cartService from "./services/cart-service";
 import Confirmation from "./routs/ClientHome/Confirmation";
 
 export default function App() {
@@ -52,7 +52,11 @@ export default function App() {
               <Route path="login" element={<Login />} />
               <Route
                 path="confirmation/:orderId"
-                element={<Confirmation />}
+                element={
+                  <PrivateRoute>
+                    <Confirmation />
+                  </PrivateRoute>
+                }
               />
             </Route>
             <Route
